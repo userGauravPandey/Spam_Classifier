@@ -2,6 +2,11 @@ import streamlit as st
 import pickle
 import re
 from nltk.stem import WordNetLemmatizer
+import nltk
+try:
+    nltk.data.find('corpora/wordnet')
+except nltk.downloder.DownloadError:
+    nltk.download('wordnet')
 # You must make sure NLTK is installed in your Streamlit environment: pip install streamlit nltk scikit-learn
 
 # --- 1. Load the Model and Vectorizer ---
